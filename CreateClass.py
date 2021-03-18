@@ -8,12 +8,19 @@ class Developer:
         
     
 
-myVariable = "Hello"
+class Translator(Developer):
+    def __init__(self, languages, name):
+        super().__init__(languages, name=name)
 
-myName = "Mohammed"
-myLan = ["Python","Dart","Js"]
+    def addLang(self, lang):
+        if len(self.languages) >=3:
+            self.languages.remove(self.languages[0])
+            return super().addLang(lang)
 
-dev = Developer(myLan)
-dev.addLang("Perl")
-print(dev.languages)
+    
 
+
+translator = Translator(['Arabic',"English","Tamazight"],"Mohammed")
+translator.addLang('French')
+translator.addLang('Spanish')
+print(translator.languages)
