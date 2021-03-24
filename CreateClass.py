@@ -1,26 +1,23 @@
-class Developer:
-    def __init__(self,languages,name="Ahmed"):
-        self.languages = languages
-        self.name = name
 
-    def addLang(self,lang):
-        self.languages.append(lang)
+    
+
+from myPackage import Translator
+
+class ShowInfo:
+    def __init__(self,obj):
+        self.obj = obj
+        self.name = obj.name
+        self.lang = obj.languages
         
-    
-
-class Translator(Developer):
-    def __init__(self, languages, name):
-        super().__init__(languages, name=name)
-
-    def addLang(self, lang):
-        if len(self.languages) >=3:
-            self.languages.remove(self.languages[0])
-            return super().addLang(lang)
-
-    
-
+    def getName(self):
+        return self.obj.name
+    def getLang(self):
+        return self.obj.languages
 
 translator = Translator(['Arabic',"English","Tamazight"],"Mohammed")
-translator.addLang('French')
-translator.addLang('Spanish')
-print(translator.languages)
+def translator(name):
+    return Translator(['Arabic',"English","Tamazight"],name)
+info = ShowInfo(translator("Ahmed"))
+
+print(info.name)
+print(info.lang)

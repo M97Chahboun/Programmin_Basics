@@ -1,29 +1,32 @@
-class Developer {
-  String? name;
-  List<String?> languages;
-  Developer(this.name, this.languages);
-  void addLang(lang) {
-    languages.add(lang);
-  }
-}
 
-class Translator extends Developer {
-  Translator(String? name, List<String?> languages) : super(name, languages);
-  @override
-  void addLang(lang) {
-    if (this.languages.length >= 3) {
-      this.languages.removeAt(0);
-      super.addLang(lang);
-    }
+
+import 'myPackage.dart';
+class ShowInfo {
+  Developer obj;
+  String? name;
+  List? lang;
+  ShowInfo(this.obj) {
+    name = obj.name;
+    lang = obj.languages;
+  }
+
+
+
+  String? getName() {
+    return obj.name;
+  }
+
+  List? getLang() {
+    return obj.languages;
   }
 }
 
 main(List<String> args) {
-  String myName = "Mohammed";
-  List<String> myLan = ["Ar", "Dart", "Js"];
-  Translator translator =
-      Translator("Mohammed", ['Arabic', "English", "Tamazight"]);
-  translator.addLang("French");
-  translator.addLang("Spanish");
-  print(translator.languages);
+  Translator trans(String name) {
+    return Translator(name, ['Arabic', "English", "Tamazight"]);
+  }
+
+  ShowInfo inf = ShowInfo(trans("Ahmed"));
+  print(inf.name);
+  print(inf.lang);
 }
