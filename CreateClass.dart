@@ -1,6 +1,5 @@
-
-
 import 'myPackage.dart';
+
 class ShowInfo {
   Developer obj;
   String? name;
@@ -9,8 +8,6 @@ class ShowInfo {
     name = obj.name;
     lang = obj.languages;
   }
-
-
 
   String? getName() {
     return obj.name;
@@ -21,12 +18,16 @@ class ShowInfo {
   }
 }
 
-main(List<String> args) {
-  Translator trans(String name) {
-    return Translator(name, ['Arabic', "English", "Tamazight"]);
-  }
+// List
+// Map
+// Set
 
-  ShowInfo inf = ShowInfo(trans("Ahmed"));
-  print(inf.name);
-  print(inf.lang);
+main(List<String> args) {
+  int x = 0;
+  while (x < 10) {
+    print(x < 10);
+    print('hello');
+    print('world');
+    x += 1;
+  }
 }
