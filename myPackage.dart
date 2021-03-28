@@ -8,7 +8,10 @@ class Developer {
 }
 
 class Translator extends Developer {
-  Translator(String? name, List<String?> languages) : super(name, languages);
+  Translator(
+    List<String?> languages,
+    String? name,
+  ) : super(name, languages);
   @override
   void addLang(lang) {
     if (this.languages.length >= 3) {

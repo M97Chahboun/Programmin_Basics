@@ -27,14 +27,30 @@ info = ShowInfo(translator("Ahmed"))
 # dict
 # str
 
-items = 12
-for item in items:
-    print(item)
+# items = 12
+# for item in items:
+#     print(item)
     
 
-x = 0
-while x<10:
-    print(x<10)
-    print('hello')
-    print('world')
-    x+=1
+# x = 0
+# while x<10:
+#     print(x<10)
+#     print('hello')
+#     print('world')
+#     x+=1
+
+person1 = Translator(['Arabic',"English"],"Mohammed")
+person2 = Translator(['Arabic'],"Ahmed")
+person3 = Translator(['Arabic',"English","Tamazight"],"Khalid")
+
+per = [person1,person2,person3]
+for person in per:
+    if len(person.languages) >=4:
+        print(person.name)
+    elif len(person.languages) == 0:
+        print(person.name,"1 Language")
+    else:
+        print('Invalid condition')
+
+if "Arabic" in person1.languages:
+    print('yes this person speak Arabic')
